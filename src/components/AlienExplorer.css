@@ -1,0 +1,482 @@
+/* AlienExplorer.css */
+.alien-explorer {
+  min-height: 100vh;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.alien-explorer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(33, 150, 243, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 152, 0, 0.1) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.alien-explorer .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.explorer-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.explorer-header h2 {
+  font-size: 3.5rem;
+  background: linear-gradient(90deg, #00FF88, #2196F3, #FF9800, #9C27B0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.explorer-header p {
+  font-size: 1.2rem;
+  color: #ddd;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Series Selector */
+.series-selector {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.series-btn {
+  padding: 14px 28px;
+  border-radius: 50px;
+  border: 2px solid;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Orbitron', sans-serif;
+  backdrop-filter: blur(10px);
+}
+
+.series-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.series-btn.active {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Series Info */
+.series-info {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.series-info h3 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.series-info p {
+  font-size: 1.2rem;
+  color: #ddd;
+  line-height: 1.7;
+}
+
+/* Alien Display */
+.alien-display-container.transitioning {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.alien-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.alien-card {
+  flex: 1;
+  max-width: 1000px;
+  min-height: 500px;
+  background: rgba(20, 20, 40, 0.8);
+  border-radius: 25px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.alien-content {
+  display: flex;
+  height: 100%;
+}
+
+.alien-image-section {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.alien-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1;
+}
+
+.alien-image {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.alien-series-tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.alien-stats {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.stat-label {
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+.stat-value {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Alien Info Section */
+.alien-info-section {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.alien-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.alien-header h3 {
+  font-size: 2.8rem;
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+}
+
+.alien-icon {
+  font-size: 3rem;
+  opacity: 0.8;
+}
+
+.alien-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ddd;
+  margin-bottom: 30px;
+  padding-right: 20px;
+}
+
+.abilities-section h4 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.abilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.ability-tag {
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ability-tag:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Alien Dots */
+.alien-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 50px;
+}
+
+.alien-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.alien-dot:hover {
+  transform: scale(1.5);
+}
+
+/* All Aliens Preview */
+.all-aliens-preview {
+  margin-top: 60px;
+}
+
+.all-aliens-preview h4 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.aliens-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.preview-alien-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  backdrop-filter: blur(10px);
+}
+
+.preview-alien-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.preview-alien-card.active {
+  border-color: currentColor;
+  box-shadow: 0 0 20px currentColor;
+}
+
+.preview-alien-image {
+  width: 100%;
+  height: 180px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.preview-alien-info h5 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.preview-species {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+
+.preview-abilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.preview-ability {
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  font-size: 0.8rem;
+  color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+  .alien-content {
+    flex-direction: column;
+  }
+  
+  .alien-image-section,
+  .alien-info-section {
+    padding: 30px;
+  }
+  
+  .alien-image-wrapper {
+    max-width: 300px;
+  }
+  
+  .alien-header h3 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .explorer-header h2 {
+    font-size: 2.5rem;
+  }
+  
+  .series-selector {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .series-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .alien-display {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .nav-btn {
+    order: 3;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .alien-card {
+    order: 1;
+    min-height: auto;
+  }
+  
+  .abilities-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .aliens-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .explorer-header h2 {
+    font-size: 2rem;
+  }
+  
+  .alien-header h3 {
+    font-size: 1.8rem;
+  }
+  
+  .alien-description {
+    font-size: 1rem;
+  }
+  
+  .alien-image-section,
+  .alien-info-section {
+    padding: 20px;
+  }
+}
